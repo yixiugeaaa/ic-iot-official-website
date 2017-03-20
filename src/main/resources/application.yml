@@ -1,0 +1,46 @@
+server:
+    port: 8083 #系统端口号
+    context-path: /ic-iot #应用路径
+    #ssl:
+     #     key-store: .keystore
+     #     key-store-password: 12345678
+     #     key-store-type: JKS
+    #      key-alias: tomcat
+
+logging:
+    level:
+        tk.mybatis: TRACE
+
+mybatis:
+    type-aliases-package: com.iot.model
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+      lazy-loading-enabled: true #开启延迟加载
+      aggressive-lazy-loading: false
+      use-generated-keys: true #true-插入和更新的时候返回值为条目主键
+
+spring:
+  profiles:
+    active: dev #使用的配置环境
+
+management:
+  security:
+    enabled: false
+
+systemConfig:
+  allowJpush: true #开启极光报警推送
+  allowWebsocket: true  #开启webSocket报警推送
+  allowSms: false  #开启短信报警推送
+  tokenExpireDays: 1  #token有效期
+  deviceCacheExpireDays: 1  #设备信息缓存有效期
+
+
+  jpush:  #极光推送key
+      appKey: "879607d841156e2cc9fbf70b"
+      masterSecret: "4e07edfad7f4149170d58d86"
+
+  sms:  #短信推送key
+      appKey: "b7d89f3e55851d2edb4c011a33486df4"
+      appId: "1400023091"
+
+
