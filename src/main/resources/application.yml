@@ -1,6 +1,6 @@
 server:
-    port: 8083 #系统端口号
-    context-path: /ic-iot #应用路径
+    port: 8084 #系统端口号
+    context-path: /ic-iot-ow #应用路径
     #ssl:
      #     key-store: .keystore
      #     key-store-password: 12345678
